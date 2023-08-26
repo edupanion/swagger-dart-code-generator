@@ -369,7 +369,7 @@ import 'dart:convert';
 $enumsImport
 $overridenModels
 
-    part '$fileNameWithoutExtension.models.swagger.g.dart';
+    part 'generated/$fileNameWithoutExtension.models.swagger.g.dart';
 
     $models
 
