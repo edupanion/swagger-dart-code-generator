@@ -1,10 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'pet_service_json.swagger.dart';
+part of 'some_file_name.swagger.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
+
+Order _$OrderFromJson(Map<String, dynamic> json) => Order(
+      id: (json['id'] as num?)?.toInt(),
+      petId: (json['petId'] as num?)?.toInt(),
+      quantity: (json['quantity'] as num?)?.toInt(),
+      shipDate: json['shipDate'] == null
+          ? null
+          : DateTime.parse(json['shipDate'] as String),
+      status: orderStatusNullableFromJson(json['status']),
+      complete: json['complete'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$OrderToJson(Order instance) => <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.petId case final value?) 'petId': value,
+      if (instance.quantity case final value?) 'quantity': value,
+      if (instance.shipDate?.toIso8601String() case final value?)
+        'shipDate': value,
+      if (orderStatusNullableToJson(instance.status) case final value?)
+        'status': value,
+      if (instance.complete case final value?) 'complete': value,
+    };
 
 Category _$CategoryFromJson(Map<String, dynamic> json) => Category(
       id: (json['id'] as num?)?.toInt(),
@@ -46,6 +68,32 @@ Tag _$TagFromJson(Map<String, dynamic> json) => Tag(
 Map<String, dynamic> _$TagToJson(Tag instance) => <String, dynamic>{
       if (instance.id case final value?) 'id': value,
       if (instance.name case final value?) 'name': value,
+    };
+
+Pet _$PetFromJson(Map<String, dynamic> json) => Pet(
+      id: (json['id'] as num?)?.toInt(),
+      category: json['category'] == null
+          ? null
+          : Category.fromJson(json['category'] as Map<String, dynamic>),
+      name: json['name'] as String? ?? '',
+      photoUrls: (json['photoUrls'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      tags: (json['tags'] as List<dynamic>?)
+          ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      status: petStatusNullableFromJson(json['status']),
+    );
+
+Map<String, dynamic> _$PetToJson(Pet instance) => <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.category?.toJson() case final value?) 'category': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.photoUrls case final value?) 'photoUrls': value,
+      if (instance.tags?.map((e) => e.toJson()).toList() case final value?)
+        'tags': value,
+      if (petStatusNullableToJson(instance.status) case final value?)
+        'status': value,
     };
 
 ApiResponse _$ApiResponseFromJson(Map<String, dynamic> json) => ApiResponse(

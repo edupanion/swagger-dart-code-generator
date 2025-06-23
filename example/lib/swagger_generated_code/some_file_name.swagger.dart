@@ -12,19 +12,19 @@ import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart' show MultipartFile;
 import 'package:chopper/chopper.dart' as chopper;
-import 'pet_service_yaml.enums.swagger.dart' as enums;
-export 'pet_service_yaml.enums.swagger.dart';
+import 'some_file_name.enums.swagger.dart' as enums;
+export 'some_file_name.enums.swagger.dart';
 
-part 'pet_service_yaml.swagger.chopper.dart';
-part 'pet_service_yaml.swagger.g.dart';
+part 'some_file_name.swagger.chopper.dart';
+part 'some_file_name.swagger.g.dart';
 
 // **************************************************************************
 // SwaggerChopperGenerator
 // **************************************************************************
 
 @ChopperApi()
-abstract class PetServiceYaml extends ChopperService {
-  static PetServiceYaml create({
+abstract class SomeFileName extends ChopperService {
+  static SomeFileName create({
     ChopperClient? client,
     http.Client? httpClient,
     Authenticator? authenticator,
@@ -34,11 +34,11 @@ abstract class PetServiceYaml extends ChopperService {
     List<Interceptor>? interceptors,
   }) {
     if (client != null) {
-      return _$PetServiceYaml(client);
+      return _$SomeFileName(client);
     }
 
     final newClient = ChopperClient(
-      services: [_$PetServiceYaml()],
+      services: [_$SomeFileName()],
       converter: converter ?? $JsonSerializableConverter(),
       interceptors: interceptors ?? [],
       client: httpClient,
@@ -46,7 +46,7 @@ abstract class PetServiceYaml extends ChopperService {
       errorConverter: errorConverter,
       baseUrl: baseUrl ?? Uri.parse('http://petstore.swagger.io/v2'),
     );
-    return _$PetServiceYaml(newClient);
+    return _$SomeFileName(newClient);
   }
 
   ///Add a new pet to the store
